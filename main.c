@@ -1,57 +1,32 @@
 #include <stdio.h>
-#define ROWS 3
-#define COLS 3
 
-void add_matrix(int A[][COLS], int B[][COLS], int C[][COLS]);
-void print_matrix(int A[][COLS]);
+#define COUNT 10
 
-int main(void)
+int main()
 {
-	int A[ROWS][COLS] = {
-	{2, 3, 0},
-	{8, 9, 1},
-	{7, 0, 5}};
-
-	int B[ROWS][COLS] = {
-	{1, 0, 0},
-	{0, 1, 0},
-	{0, 0, 1}};
+	//변수 선언
+	 
+	int data[COUNT];
+	int i, j;
+	int temp;
 	
-	int C[ROWS][COLS];
+	//입력값 받기
+	 
+	printf("정수 10개를 입력하시오 : ");
 	
-	add_matrix(A, B, C);
-	print_matrix(C);
+	for(i=0; i<COUNT; i++)
+	{
+		scanf("%d", &data[i]);
+	}
+	
+	//출력
+	 
+	printf("\n\n출력  : ");
+	
+	for(j=0; j<COUNT; j++)
+	{
+		printf("%d ", data[j]);
+	}
 	
 	return 0;
-}
-
-void add_matrix(int A[][COLS], int B[][COLS], int C[][COLS])
-{
-	int i, j;
-	
-	for(i=0; i<ROWS; i++)
-	{
-		for(j=0; j<COLS; j++)
-		{
-			C[i][j] = A[i][j] + B[i][j];
-		}
-	}
-	
-	return;
-	
-}
-
-void print_matrix(int A[][COLS])
-{
-	int i, j;
-	for(i=0; i<ROWS; i++)
-	{
-		for(j=0; j<COLS; j++)
-		{
-			printf("%d ", A[i][j]);
-		}
-		printf("\n");
-	}
-	
-	return;
 }
